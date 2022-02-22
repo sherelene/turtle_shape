@@ -4,8 +4,8 @@ screen = turtle.Screen()
 screen.setup(500,500)
 screen.setworldcoordinates(-500,-500,500,500)
 art = turtle.Pen()
-art.speed(90)
-turtle.speed(90)
+art.speed(180)
+turtle.speed(180)
 turtle.bgcolor("black")
 colors = ["red", "blue", "green", "orange", "purple", "pink"]
 #colors = ["black","black","black","black","black",]
@@ -16,11 +16,16 @@ angle = 45
 
 
 
-for x in range(160):
+for x in range(20):
+  r = 8
   art.pencolor(colors[x%sides])
   art.forward(x*distance/sides + x)
   art.left(360/sides + angle)
   art.width(x*sides/360)
+  for i in range(100):
+    art.circle(r + i, 35)
+    art.pencolor("white")
+
 
 
 
@@ -30,3 +35,4 @@ for i in range(10,1800,6):
     turtle.pencolor(colors[i % sides])
     turtle.left(89.7)
     turtle.speed(90)
+
