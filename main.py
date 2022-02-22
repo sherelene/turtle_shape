@@ -1,53 +1,23 @@
 from turtle import *
 import turtle
 from turtle import Screen, Turtle
-#default shape
-turtle.shape("turtle")
-tur = turtle.Screen()
-tur = turtle.Turtle()
-tur.speed(6)
-tur.pensize(5)
+import turtle
+MINIMUM_BRANCH_LENGTH = 5
 
-
-def hexagon():
-# for default shape
-    turtle.color("purple")
-    turtle.forward(50)
-
-# for circle shape
-    turtle.shape("circle")
-    turtle.right(60)
-    turtle.forward(100)
-    turtle.color("purple")
-
-# for triangle shape
-    turtle.shape("triangle")
-    turtle.right(60)
-    turtle.forward(100)
-    turtle.color("blue")
-
-# for square shape
-    turtle.shape("square")
-    turtle.right(60)
-    turtle.forward(100)
-
-# for arrow shape
-    turtle.shape("arrow")
-    turtle.right(60)
-    turtle.forward(100)
-
-# for turtle shape
-    turtle.shape("turtle")
-    turtle.right(60)
-    turtle.forward(100)
-
-
-
-hexagon()
-forward(200)
-hexagon()
-left(60)
-hexagon()
-forward(250)
-hexagon()
-right(180)
+def build_tree(t, branch_length, shorten_by, angle):
+  if branch_length > MINIMUM_BRANCH_LENGTH:
+    t.forward(branch_length)
+    new_length = branch_length - shorten_by
+    t.left(angle)
+    build_tree(t, new_length, shorten_by, angle)
+    t.right(angle * 2)
+    build_tree(t, new_length, shorten_by, angle)
+    t.left(angle)
+    t.backward(branch_length)
+tree = turtle.Turtle()
+tree.hideturtle()
+tree.speed(200)
+tree.setheading(90)
+tree.color('purple')
+build_tree(tree, 50, 5, 30)
+turtle.mainloop()
