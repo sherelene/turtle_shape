@@ -11,17 +11,20 @@ tur.pensize(5)
 
 def hexagon():
 # for default shape
+    turtle.color("purple")
     turtle.forward(50)
 
 # for circle shape
     turtle.shape("circle")
     turtle.right(60)
     turtle.forward(100)
+    turtle.color("purple")
 
 # for triangle shape
     turtle.shape("triangle")
     turtle.right(60)
     turtle.forward(100)
+    turtle.color("blue")
 
 # for square shape
     turtle.shape("square")
