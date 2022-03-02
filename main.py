@@ -1,14 +1,19 @@
 import turtle
 
-g = turtle.Turtle()
-g.forward(100)
-g.right(90)
-g.forward(50)
-g.position()
 
-screen = turtle.Screen()
-screen.setup(500,500)
-screen.setworldcoordinates(-500,-500,500,500)
+
+
+
+
+g = turtle.Turtle()
+#g.forward(100)
+#g.right(90)
+#g.forward(50)
+#g.position()
+
+#screen = turtle.Screen()
+#screen.setup(500,500)
+#screen.setworldcoordinates(-500,-500,500,500)
 art = turtle.Pen()
 art.speed(180)
 turtle.speed(180)
@@ -22,21 +27,19 @@ angle = 45
 
 
 
-for x in range(20):
-  r = 8
-  art.pencolor(colors[x%sides])
-  art.forward(x*distance/sides + x)
-  art.left(360/sides + angle)
-  art.width(x*sides/360)
-  for i in range(100):
-    art.circle(r + i, 35)
-    art.pencolor("white")
-    turtle.fd(i)
-    colors = ["red", "blue", "green", "orange", "purple", "pink"]
-    turtle.pencolor(colors[i % sides])
-    turtle.left(89.7)
-    turtle.speed(90)
 
 
-
+r = 8
+for i in range(500):
+  art.circle(r + i, 35)
+  art.pencolor(colors[i % sides])
+  # turtle.fd(i)
+  while i < 50:
+    colors = ["black", "white", "gray", "black",  "white"]
+    i = i + 1
+  if i > 50:
+    colors = ["purple", "pink", "blue", "green", "teal", "purple", "pink"]
+  # turtle.pencolor(colors[i % sides])
+  art.left(89.7)
+  art.speed(90)
 
